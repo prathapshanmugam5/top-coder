@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="screen">
+        <div class="screen__content">
+            <form class="login" (ngSubmit)="register()">
+                <div class="login__field">
+                    <i class="login__icon fas fa-user"></i>
+                    <input type="text" class="login__input" placeholder="UserName" name="username" [(ngModel)]="username" required>
+                </div>
+                <div class="login__field">
+                    <i class="login__icon fas fa-user"></i>
+                    <input type="text" class="login__input" placeholder="Email" name="email" [(ngModel)]="email" required>
+                </div>
+                <div class="login__field">
+                    <i class="login__icon fas fa-lock"></i>
+                    <input type="password" class="login__input" placeholder="Password" name="password" [(ngModel)]="password" required>
+                </div>
+                <div class="alert" *ngIf="error">
+                    {{ error }}
+                </div>
+                <button type="submit" class="button login__submit">
+                    <span class="button__text">Sign Up</span>
+                    <i class="button__icon fas fa-chevron-right"></i>
+                </button>
+                <button type="button" class="button login__submit" (click)="navigateToRegisterPage()">
+                    <span class="button__text">Login In</span>
+                    <i class="button__icon fas fa-chevron-right"></i>
+                </button>				
+            </form>
+            <!-- Optional: Social login buttons or other content -->
+        </div>
+        <div class="screen__background">
+            <span class="screen__background__shape screen__background__shape4"></span>
+            <span class="screen__background__shape screen__background__shape3"></span>		
+            <span class="screen__background__shape screen__background__shape2"></span>
+            <span class="screen__background__shape screen__background__shape1"></span>
+        </div>		
+    </div>
+</div>
