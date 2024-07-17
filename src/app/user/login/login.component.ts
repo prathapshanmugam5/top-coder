@@ -33,6 +33,14 @@ export class LoginComponent {
 
     this.loginService.getData("user/login",req).subscribe(response => {
       if (response.statusCode === 0) {
+
+        const data={
+          id:response.id,
+          username:response.username,
+          email:response.email
+        }
+
+        localStorage.setItem("user",JSON.stringify(data));
         this.router.navigate(["",'home']);
         console.log('Login Success');
       } else {
