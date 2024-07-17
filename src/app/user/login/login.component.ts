@@ -35,9 +35,9 @@ export class LoginComponent {
       if (response.statusCode === 0) {
 
         const data={
-          id:response.id,
-          username:response.username,
-          email:response.email
+          id:response.responseContent.id,
+          username:response.responseContent.username,
+          email:response.responseContent.email
         }
 
         localStorage.setItem("user",JSON.stringify(data));
