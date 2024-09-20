@@ -39,7 +39,16 @@ export class RegisterComponent {
     this.loginService.getData("user/register",req).subscribe(response => {
       if (response.statusCode === 0) {
         console.log(response);
+
+        const userDetails={
+          email:response.responseContent.user.email,
+          username:response.responseContent.user.username,
+          userId:response.responseContent.user.id,
+          token:response.responseContent.token
+        }
         
+        localStorage.setItem("user",JSON.stringify(userDetails));
+        this.router.navigate(["",'home']);
         console.log("Login Success");
       } else {
         console.log("Login NOT Success");

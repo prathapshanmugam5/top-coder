@@ -36,14 +36,15 @@ export class LoginComponent {
 
         console.log(response);
         
-
-        const data={
-          id:response.responseContent.id,
-          username:response.responseContent.username,
-          email:response.responseContent.email
+        const userDetails={
+          email:response.responseContent.user.email,
+          username:response.responseContent.user.username,
+          userId:response.responseContent.user.id,
+          token:response.responseContent.token
         }
+      
 
-        localStorage.setItem("user",JSON.stringify(data));
+        localStorage.setItem("user",JSON.stringify(userDetails));
         this.router.navigate(["",'home']);
         console.log('Login Success');
       } else {
