@@ -12,7 +12,7 @@ export class ApiService {
 
   constructor(private http:HttpClient,private router:Router) { }
 
-  private url=environment.LOCAL_URL;
+  private url=environment.STAGE_URL;
 
   getData(path:string,data:any):Observable<any>{
     
