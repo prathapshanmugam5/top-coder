@@ -34,6 +34,9 @@ export class LoginComponent {
     this.loginService.getData("user/login",req).subscribe(response => {
       if (response.statusCode === 0) {
 
+        console.log(response);
+        
+
         const data={
           id:response.responseContent.id,
           username:response.responseContent.username,

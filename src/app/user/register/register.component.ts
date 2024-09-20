@@ -38,7 +38,8 @@ export class RegisterComponent {
     };
     this.loginService.getData("user/register",req).subscribe(response => {
       if (response.statusCode === 0) {
-        this.router.navigate(["",'home']);
+        console.log(response);
+        
         console.log("Login Success");
       } else {
         console.log("Login NOT Success");
